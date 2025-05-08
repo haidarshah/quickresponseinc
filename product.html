@@ -1,37 +1,38 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Product – Quick Response Inc.</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/css/main.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="is-preload">
+<body class="bg-gray-100 text-gray-900 font-sans">
+
   <!-- Header -->
-  <header id="header">
-    <h1><a href="index.html">Quick Response Inc.</a></h1>
-    <nav id="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-blue-600">Quick Response Inc.</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Product Detail -->
-  <section id="one" class="wrapper style1 special">
-    <div class="inner" id="productDetail">
-      <p>Loading...</p>
+  <section class="py-12">
+    <div class="max-w-3xl mx-auto px-4 bg-white shadow rounded-lg p-6">
+      <div id="productDetail">Loading...</div>
     </div>
   </section>
 
-  <!-- Scripts -->
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/jquery.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/browser.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/breakpoints.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/util.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/main.js"></script>
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-600">
+      © 2025 Quick Response Inc.
+    </div>
+  </footer>
 
   <script>
     const params = new URLSearchParams(location.search);
@@ -40,20 +41,27 @@
       .then(r => r.json())
       .then(products => {
         const p = products.find(x => x.id === id);
-        const c = document.getElementById('productDetail');
+        const container = document.getElementById('productDetail');
         if (!p) {
-          c.innerHTML = '<p>Product not found.</p>';
+          container.innerHTML = '<p class="text-red-600">Product not found.</p>';
           return;
         }
-        c.innerHTML = `
-          <span class="icon solid fa-cog"></span>
-          <h3>${p.name}</h3>
-          <p>${p.shortDescription || ''}</p>
-          <ul class="actions special">
-            <li><a href="mailto:info@quickresponseinc.com?subject=Request a Quote for ${encodeURIComponent(p.name)}" class="button primary">Request a Quote</a></li>
-          </ul>
+        container.innerHTML = `
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-1/2 bg-gray-200 flex items-center justify-center">
+              <img src="${p.imageUrl || 'https://source.unsplash.com/600x400/?woodwork,machine'}" alt="${p.name}" class="object-cover"/>
+            </div>
+            <div class="md:w-1/2">
+              <h2 class="text-2xl font-bold mb-4">${p.name}</h2>
+              <p class="text-gray-700 mb-6">${p.shortDescription || ''}</p>
+              <a href="mailto:info@quickresponseinc.com?subject=Request a Quote for ${encodeURIComponent(p.name)}" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold">
+                Request a Quote
+              </a>
+            </div>
+          </div>
         `;
       });
   </script>
+
 </body>
 </html>

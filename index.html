@@ -1,64 +1,71 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Quick Response Inc. – Industrial-Grade Woodwork Machinery</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/css/main.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quick Response Inc. – Woodwork Machinery Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="is-preload">
+<body class="bg-gray-100 text-gray-900 font-sans">
+
   <!-- Header -->
-  <header id="header">
-    <h1><a href="index.html">Quick Response Inc.</a></h1>
-    <nav id="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-blue-600">Quick Response Inc.</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Banner -->
-  <section id="banner">
-    <h2>Industrial-Grade Woodwork Machinery Since 1998</h2>
-    <p>Premium planers, jointers, sanders & more — request a quote today!</p>
-    <ul class="actions special">
-      <li><a href="#one" class="button primary">Browse Products</a></li>
-    </ul>
-  </section>
-
-  <!-- Products -->
-  <section id="one" class="wrapper style1 special">
-    <div class="inner">
-      <header class="major">
-        <h2>Featured Products</h2>
-      </header>
-      <ul class="features" id="productGrid"></ul>
+  <!-- Hero -->
+  <section class="relative bg-cover bg-center h-96" style="background-image:url('https://source.unsplash.com/1600x900/?woodworking,machinery')">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative max-w-2xl mx-auto text-center text-white top-1/2 transform -translate-y-1/2 px-4">
+      <h1 class="text-4xl font-extrabold mb-4">Industrial-Grade Woodworking Machinery</h1>
+      <p class="mb-6">Premium planers, jointers, sanders & accessories — backed by expert support and training.</p>
+      <a href="#products" class="bg-blue-600 hover:bg-blue-700 py-3 px-6 rounded-lg font-semibold">Browse Products</a>
     </div>
   </section>
 
-  <!-- Scripts -->
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/jquery.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/browser.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/breakpoints.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/util.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/main.js"></script>
+  <!-- Products Grid -->
+  <section id="products" class="py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Our Machinery</h2>
+      <div id="productGrid" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-600">
+      © 2025 Quick Response Inc. | 123 Industrial Lane, Toronto, ON | <a href="mailto:info@quickresponseinc.com" class="text-blue-600">info@quickresponseinc.com</a>
+    </div>
+  </footer>
 
   <script>
     fetch('products.json')
       .then(r => r.json())
       .then(products => {
         const grid = document.getElementById('productGrid');
-        products.slice(0, 6).forEach(p => {
-          const li = document.createElement('li');
-          li.innerHTML = `
-            <span class="icon solid fa-cog"></span>
-            <h3>${p.name}</h3>
-            <p>${p.shortDescription || ''}</p>
-            <a href="product.html?id=${encodeURIComponent(p.id)}" class="button small">Request a Quote</a>
+        products.forEach(p => {
+          const card = document.createElement('div');
+          card.className = 'bg-white shadow rounded-lg overflow-hidden flex flex-col';
+          card.innerHTML = `
+            <div class="h-48 bg-gray-200 flex items-center justify-center">
+              <img src="${p.imageUrl || 'https://source.unsplash.com/400x300/?woodwork,tool'}" alt="${p.name}" class="h-full object-cover"/>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="font-semibold text-lg mb-2">${p.name}</h3>
+              <p class="text-gray-600 flex-1">${p.shortDescription || ''}</p>
+              <a href="product.html?id=${encodeURIComponent(p.id)}" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-center font-medium">
+                Request a Quote
+              </a>
+            </div>
           `;
-          grid.appendChild(li);
+          grid.appendChild(card);
         });
       });
   </script>

@@ -1,63 +1,59 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact – Quick Response Inc.</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/css/main.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="is-preload">
+<body class="bg-gray-100 text-gray-900 font-sans">
+
   <!-- Header -->
-  <header id="header">
-    <h1><a href="index.html">Quick Response Inc.</a></h1>
-    <nav id="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-blue-600">Quick Response Inc.</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="contact.html" class="hover:text-blue-600 font-semibold">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Contact -->
-  <section id="one" class="wrapper style1 special">
-    <div class="inner">
-      <header class="major">
-        <h2>Request a Quote</h2>
-        <p>Ready to outfit your shop? Fill out the form below and we’ll provide a custom quote.</p>
-      </header>
-      <form name="contact" method="POST" data-netlify="true" class="contact-form">
-        <div class="fields">
-          <div class="field half">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" required />
-          </div>
-          <div class="field half">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required />
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" rows="4" required></textarea>
-          </div>
+  <!-- Contact Form -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 bg-white shadow rounded-lg p-6">
+      <h2 class="text-2xl font-bold mb-4">Request a Quote</h2>
+      <form name="contact" method="POST" data-netlify="true" class="space-y-4">
+        <input type="hidden" name="form-name" value="contact">
+        <div>
+          <label class="block font-medium">Name</label>
+          <input type="text" name="name" required class="w-full border-gray-300 rounded-lg p-2"/>
         </div>
-        <ul class="actions special">
-          <li><button type="submit" class="button primary">Send Message</button></li>
-        </ul>
+        <div>
+          <label class="block font-medium">Email</label>
+          <input type="email" name="email" required class="w-full border-gray-300 rounded-lg p-2"/>
+        </div>
+        <div>
+          <label class="block font-medium">Details / Message</label>
+          <textarea name="message" rows="4" required class="w-full border-gray-300 rounded-lg p-2"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg font-semibold">Send Request</button>
       </form>
-      <div class="contact-info">
+      <div class="mt-6 text-gray-600">
         <p><strong>Address:</strong> 123 Industrial Lane, Toronto, ON</p>
-        <p><strong>Email:</strong> <a href="mailto:info@quickresponseinc.com">info@quickresponseinc.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@quickresponseinc.com" class="text-blue-600">info@quickresponseinc.com</a></p>
         <p><strong>Phone:</strong> (555) 123-4567</p>
       </div>
     </div>
   </section>
 
-  <!-- Scripts -->
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/jquery.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/browser.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/breakpoints.min.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/util.js"></script>
-  <script src="https://raw.githubusercontent.com/html5up-nsm-templates/future-imperfect/master/assets/js/main.js"></script>
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-600">
+      © 2025 Quick Response Inc.
+    </div>
+  </footer>
+
 </body>
 </html>
