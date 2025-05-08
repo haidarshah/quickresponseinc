@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Product – Quick Response Inc.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <a href="index.html" class="text-2xl font-bold text-blue-600">Quick Response Inc.</a>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Product Detail -->
+  <main id="product-detail" class="max-w-4xl mx-auto py-16 px-4"></main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 py-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <p>© 2025 Quick Response Inc. | info@quickresponseinc.com</p>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    fetch('products.json')
+      .then(r => r.json())
+      .then(list => {
+        const p = list.find(x => x.id === id);
+        const container = document.getElementById('product-detail');
+        if (!p) {
+          container.innerHTML = '<p class="text-center text-red-600">Product not found.</p>';
+          return;
+        }
+        document.title = p.name + ' – Quick Response Inc.';
+        container.innerHTML = \`
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <img src="\${p.imageUrl||\`https://source.unsplash.com/800x600/?\${encodeURIComponent(p.name)}\`}"
+                 alt="\${p.name}"
+                 class="w-full rounded-lg shadow">
+            <div>
+              <h1 class="text-3xl font-bold mb-4">\${p.name}</h1>
+              <p class="text-gray-700 mb-6">\${p.shortDescription || 'No description available.'}</p>
+              <button onclick="location.href='mailto:info@quickresponseinc.com?subject=Request a Quote for \${encodeURIComponent(p.name)}'"
+                      class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold">
+                Request a Quote
+              </button>
+            </div>
+          </div>
+        \`;
+      });
+  </script>
+</body>
+</html>
