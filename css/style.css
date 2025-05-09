@@ -237,3 +237,44 @@ form button {
 .partners img:hover {
   opacity: 1;
 }
+
+
+/* SVG wave dividers */
+.section-divider {
+  display: block;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+}
+.section-divider svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Testimonials carousel arrows */
+.testimonials .testimonial-card {
+  transition: transform 0.3s ease;
+}
+.testimonials .testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+/* Input focus styling */
+form input:focus, form textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+/* Button gradient */
+.btn {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+/* Footer partner logos hover */
+.partners img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.partners img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
