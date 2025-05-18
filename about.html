@@ -1,1 +1,38 @@
-<html><head><title>About Us - Quick Response Inc.</title></head><body><h1>About Quick Response Inc.</h1><p>We are dedicated providers of top-quality woodworking machinery solutions.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quick Response Inc. - About</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="include-header"></div>
+
+  <!-- Banner -->
+  <section class="banner" style="background-image:url('images/about-team.jpg')">
+    <div class="banner-overlay"></div>
+    <div class="banner-content container">
+      <h1>About Quick Response Inc.</h1>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="our-story container">
+    <h2>Our Story</h2>
+    <p>The journey of craftsmanship...</p>
+  </section>
+
+  <div id="include-footer"></div>
+  <script>
+    ['header','footer'].forEach(part => {
+      fetch(`partials/${part}.html`)
+        .then(res => res.text())
+        .then(html => document.getElementById(`include-${part}`).innerHTML = html);
+    });
+  </script>
+  <script src="js/vendor/scrollreveal.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

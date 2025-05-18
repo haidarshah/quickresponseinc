@@ -1,1 +1,59 @@
-<html><head><title>Our Products - Quick Response Inc.</title></head><body><h1>Our Products</h1><p>Explore our extensive range of woodworking machinery.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Products — Quick Response Inc.</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="include-header"></div>
+
+  <section class="banner" style="background-image:url('images/products-banner.jpg')">
+    <div class="banner-overlay"></div>
+    <div class="banner-content container">
+      <h1>Our Products</h1>
+      <p>Explore our lineup of woodworking machinery.</p>
+    </div>
+  </section>
+
+  <section class="product-filters container">
+    <input type="text" id="search" placeholder="Search products…">
+  </section>
+
+  <section class="product-grid container" id="productGrid">
+    <!-- JS populates cards -->
+  </section>
+
+  <div id="include-footer"></div>
+  <script src="js/main.js"></script>
+  <script>
+    // Populate product grid
+    fetch('data/products.json')
+      .then(r=>r.json())
+      .then(list=>{
+        const grid = document.getElementById('productGrid');
+        list.forEach(p=>{
+          const card = document.createElement('div');
+          card.className='card';
+          card.innerHTML = `
+            <img src="images/products/${p.id}.jpg" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>${p.shortDescription}</p>
+            <a href="product-detail.html?pid=${p.id}" class="btn btn-secondary">Request Quote</a>
+          `;
+          grid.appendChild(card);
+        });
+      });
+
+    // Simple search filter
+    document.getElementById('search').addEventListener('input', e=>{
+      const term = e.target.value.toLowerCase();
+      document.querySelectorAll('#productGrid .card').forEach(card=>{
+        card.style.display = card.textContent.toLowerCase().includes(term) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
