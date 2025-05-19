@@ -2,12 +2,12 @@
   Root Variables
 \*------------------------------------*/
 :root {
-  /* Colors */
-  --color-primary: #1a4d7a;      /* deep navy */
-  --color-secondary: #f2a035;    /* warm gold */
-  --color-accent: #333333;       /* dark gray */
-  --color-muted: #666666;        /* medium gray */
-  --color-bg: #fafafa;           /* near-white */
+  /* Orange & Grey Palette */
+  --color-primary: #e67e22;    /* bright orange */
+  --color-secondary: #95a5a6;  /* light grey */
+  --color-accent: #2c3e50;     /* dark grey-blue */
+  --color-muted: #7f8c8d;      /* medium grey */
+  --color-bg: #ecf0f1;         /* off-white */
   --color-white: #ffffff;
 
   /* Typography */

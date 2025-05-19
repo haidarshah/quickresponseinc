@@ -1,0 +1,20 @@
+{
+  "name": "netlify-quick-response",
+  "version": "1.0.0",
+  "main": "generate-product-pages.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haidarshah/quickresponseinc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haidarshah/quickresponseinc/issues"
+  },
+  "homepage": "https://github.com/haidarshah/quickresponseinc#readme",
+  "description": ""
+}
