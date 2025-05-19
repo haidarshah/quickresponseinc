@@ -1,56 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quick Response Inc. - Home</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#1a4d7a"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About Us – Quick Response Inc.</title>
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-  <div id="include-header"></div>
-
-  <!-- Hero -->
-  <section class="hero-video">
-    <video autoplay loop muted playsinline class="hero-bg">
-      <source src="images/hero-wood.mp4" type="video/mp4">
-    </video>
-    <img src="images/hero-wood.jpg" alt="Wood background" class="hero-fallback">
-    <div class="hero-content container">
-      <h1>Precision Woodworking Machinery</h1>
-      <p>Engineered for Performance. Built for Reliability.</p>
-      <a href="products.html" class="btn btn-primary">View Products</a>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section class="features container">
-    <div class="feature-card">
-      <img src="images/icons/fast.svg" alt="Fast Lead Times">
-      <h3>Fast Lead Times</h3>
-      <p>Get your machinery delivered quickly.</p>
-    </div>
-    <!-- 3 more cards -->
-  </section>
-
-  <!-- CTA Banner -->
-  <div class="cta-banner">
+  <header class="site-header">
     <div class="container">
-      <h2>Ready to Get Started?</h2>
-      <a href="#quoteModal" class="btn btn-primary">Get a Custom Quote</a>
+      <h1 class="logo">Quick Response Inc.</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div id="include-footer"></div>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <img src="images/hero.jpg" alt="Professional woodworking machinery"/>
+      <div class="hero-copy">
+        <h2>Precision Woodworking Machinery</h2>
+        <p>Delivering durable, high-performance machinery you can trust.</p>
+        <a class="btn" href="contact.html">Contact for Quote</a>
+      </div>
+    </section>
 
-  <script>
-    ['header','footer'].forEach(part => {
-      fetch(`partials/${part}.html`)
-        .then(res => res.text())
-        .then(html => document.getElementById(`include-${part}`).innerHTML = html);
-    });
-  </script>
-  <script src="js/vendor/scrollreveal.min.js"></script>
+    <!-- Features -->
+    <section class="features container">
+      <div class="feature">
+        <img src="images/feature1.jpg" alt="Durable machines"/>
+        <h3>Built to Last</h3>
+        <p>Industry-leading build quality and support.</p>
+      </div>
+      <div class="feature">
+        <img src="images/feature2.jpg" alt="Precision engineering"/>
+        <h3>Precision Engineering</h3>
+        <p>Extremely accurate cuts, every time.</p>
+      </div>
+      <div class="feature">
+        <img src="images/feature3.jpg" alt="Expert support"/>
+        <h3>Local Support</h3>
+        <p>Ontario-based service and maintenance.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Netlify Form -->
+      <h2>Get in Touch</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact"/>
+        <input type="text" name="name" placeholder="Name" required/>
+        <input type="email" name="email" placeholder="Email" required/>
+        <textarea name="message" placeholder="Your message…" rows="4"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p>&copy; 2025 Quick Response Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>

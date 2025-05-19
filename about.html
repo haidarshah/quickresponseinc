@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quick Response Inc. - About</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#1a4d7a"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About Us – Quick Response Inc.</title>
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-  <div id="include-header"></div>
-
-  <!-- Banner -->
-  <section class="banner" style="background-image:url('images/about-team.jpg')">
-    <div class="banner-overlay"></div>
-    <div class="banner-content container">
-      <h1>About Quick Response Inc.</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Quick Response Inc.</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- Our Story -->
-  <section class="our-story container">
+  <main class="container about-page">
     <h2>Our Story</h2>
-    <p>The journey of craftsmanship...</p>
-  </section>
+    <img src="images/about.jpg" alt="Our Ontario workshop"/>
+    <p>Founded in Ontario, Quick Response Inc. has been serving carpentry and woodworking professionals since 1999. Our mission is to deliver machinery that pairs exceptional precision with rock-solid reliability.</p>
+    <h3>Our Values</h3>
+    <ul>
+      <li><strong>Integrity:</strong> Honest advice and transparent pricing.</li>
+      <li><strong>Quality:</strong> Rigorous testing on every machine.</li>
+      <li><strong>Support:</strong> Local service you can count on.</li>
+    </ul>
+  </main>
 
-  <div id="include-footer"></div>
-  <script>
-    ['header','footer'].forEach(part => {
-      fetch(`partials/${part}.html`)
-        .then(res => res.text())
-        .then(html => document.getElementById(`include-${part}`).innerHTML = html);
-    });
-  </script>
-  <script src="js/vendor/scrollreveal.min.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <h2>Drop Us a Line</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact"/>
+        <input type="text" name="name" placeholder="Name" required/>
+        <input type="email" name="email" placeholder="Email" required/>
+        <textarea name="message" placeholder="Your message…" rows="4"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p>&copy; 2025 Quick Response Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>

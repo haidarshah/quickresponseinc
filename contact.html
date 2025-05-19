@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact Us — Quick Response Inc.</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#1a4d7a"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About Us – Quick Response Inc.</title>
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-  <div id="include-header"></div>
-
-  <section class="banner" style="background-image:url('images/contact-banner.jpg')">
-    <div class="banner-overlay"></div>
-    <div class="banner-content container">
-      <h1>Get in Touch</h1>
-      <p>Questions? Ready for a quote? We’re here to help.</p>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Quick Response Inc.</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
     </div>
-  </section>
-
-  <section class="contact-form container">
+  </header>
+<body>
+  <header class="site-header">…</header>
+  <main class="container">
     <h2>Contact Us</h2>
     <form name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone">
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-
-      <button type="submit" class="btn btn-primary">Send Message</button>
+      <input type="hidden" name="form-name" value="contact"/>
+      <input type="text" name="name" placeholder="Name" required/>
+      <input type="email" name="email" placeholder="Email" required/>
+      <input type="text" name="company" placeholder="Company (optional)"/>
+      <textarea name="message" placeholder="How can we help?" rows="5"></textarea>
+      <button type="submit">Send</button>
     </form>
-  </section>
-
-  <div id="include-footer"></div>
-  <script src="js/main.js"></script>
+  </main>
+  <footer class="site-footer">&copy; 2025 Quick Response Inc.</footer>
 </body>
 </html>

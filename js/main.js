@@ -1,41 +1,40 @@
-// FETCH & INSERT HEADER/FOOTER
-['header','footer'].forEach(part => {
-  fetch(`partials/${part}.html`)
-    .then(res => res.text())
-    .then(html => document.getElementById(`include-${part}`).innerHTML = html);
-});
-
-// MOBILE NAV
-const navToggle = document.querySelector('.nav-toggle');
-navToggle.addEventListener('click', () => {
-  document.querySelector('.site-nav').classList.toggle('open');
-});
-
-// SCROLLREVEAL ANIMATIONS
-if (typeof ScrollReveal !== 'undefined') {
-  ScrollReveal().reveal('.feature-card', { distance: '50px', duration: 600, easing: 'ease-out' });
-  ScrollReveal().reveal('.hero-content h1', { delay: 200, origin: 'bottom' });
+// Fetch & render products grid
+if (document.getElementById('product-grid')) {
+  fetch('data/products.json')
+    .then(r => r.json())
+    .then(products => {
+      const grid = document.getElementById('product-grid');
+      products.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.name}">
+          <h4>${p.name}</h4>
+          <a href="product.html?id=${p.id}">Details</a>
+        `;
+        grid.appendChild(card);
+      });
+    });
 }
 
-// PRODUCT FETCH EXAMPLE (for featured carousel)
-if (typeof Swiper !== 'undefined') {
-  const featuredSwiper = new Swiper('#featuredSwiper', {
-    slidesPerView: 3, spaceBetween: 20,
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-    breakpoints: { 640:{slidesPerView:1},1024:{slidesPerView:2},1280:{slidesPerView:3} }
-  });
+// Render single product detail
+if (document.getElementById('product-detail')) {
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
   fetch('data/products.json')
-    .then(r=>r.json())
-    .then(data=>{
-      data.slice(0,6).forEach(p=>{
-        const slide = document.createElement('div'); slide.className='swiper-slide';
-        slide.innerHTML = `
-          <div class="card">
-            <img src="images/products/${p.id}.jpg" alt="${p.name}">
-            <h3>${p.name}</h3>
-            <a href="contact.html?pid=${p.id}" class="btn btn-secondary">Request Quote</a>
-          </div>`;
-        featuredSwiper.appendSlide(slide);
-      });
+    .then(r => r.json())
+    .then(products => {
+      const p = products.find(x=>x.id===id);
+      if (!p) {
+        document.getElementById('product-detail').innerHTML = '<p>Product not found.</p>';
+        return;
+      }
+      document.getElementById('product-detail').innerHTML = `
+        <h2>${p.name}</h2>
+        <img src="${p.image}" alt="${p.name}" style="max-width:100%;margin:1rem 0;">
+        <p>${p.description}</p>
+        <ul>${p.specs.map(s=>`<li>${s}</li>`).join('')}</ul>
+        <a class="btn" href="contact.html?product=${encodeURIComponent(p.name)}">Contact for Quote</a>
+      `;
     });
 }
