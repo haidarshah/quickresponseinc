@@ -1,0 +1,287 @@
+/*------------------------------------*\
+  Root Variables
+\*------------------------------------*/
+:root {
+  /* Colors */
+  --color-primary: #1a4d7a;      /* deep navy */
+  --color-secondary: #f2a035;    /* warm gold */
+  --color-accent: #333333;       /* dark gray */
+  --color-muted: #666666;        /* medium gray */
+  --color-bg: #fafafa;           /* near-white */
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-sans: 'Montserrat', sans-serif;
+  --font-serif: 'Merriweather', serif;
+  --fz-base: 1rem;               /* 16px */
+  --fz-lg: 1.125rem;             /* 18px */
+  --fz-xl: 1.5rem;               /* 24px */
+  --fz-xxl: 2.5rem;              /* 40px */
+
+  /* Spacing */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2rem;
+  --sp-5: 3rem;
+
+  /* Borders */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/*------------------------------------*\
+  Base Reset
+\*------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+}
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fz-base);
+  color: var(--color-accent);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*------------------------------------*\
+  Containers
+\*------------------------------------*/
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--sp-2) 0;
+}
+
+/*------------------------------------*\
+  Header & Navigation
+\*------------------------------------*/
+.site-header {
+  background: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: var(--font-serif);
+  font-size: var(--fz-xxl);
+  color: var(--color-primary);
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin-left: var(--sp-3);
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--color-primary);
+}
+
+/*------------------------------------*\
+  Hero Section
+\*------------------------------------*/
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.hero-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-white);
+  padding: var(--sp-2);
+}
+.hero-copy h2 {
+  font-size: var(--fz-xxl);
+  margin-bottom: var(--sp-1);
+  font-family: var(--font-serif);
+}
+.hero-copy p {
+  font-size: var(--fz-lg);
+  margin-bottom: var(--sp-2);
+}
+.hero-copy .btn {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.hero-copy .btn:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/*------------------------------------*\
+  Feature Cards
+\*------------------------------------*/
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-4);
+  margin: var(--sp-5) 0;
+}
+.feature {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.feature:hover {
+  transform: translateY(-4px);
+}
+.feature img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.feature h3 {
+  margin: var(--sp-3) 0 var(--sp-1);
+  color: var(--color-primary);
+}
+.feature p {
+  padding: 0 var(--sp-2) var(--sp-3);
+  color: var(--color-muted);
+}
+
+/*------------------------------------*\
+  Products Grid
+\*------------------------------------*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-4);
+  margin: var(--sp-5) 0;
+}
+.product-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.product-card h4 {
+  font-size: var(--fz-lg);
+  margin: var(--sp-2);
+  color: var(--color-primary);
+}
+.product-card a {
+  display: inline-block;
+  margin: var(--sp-2);
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+.product-card a:hover {
+  text-decoration: underline;
+}
+
+/*------------------------------------*\
+  Product Detail
+\*------------------------------------*/
+#product-detail img {
+  margin: var(--sp-3) 0;
+  border-radius: var(--radius-md);
+}
+#product-detail h2 {
+  font-size: var(--fz-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--sp-2);
+}
+#product-detail ul {
+  list-style: disc;
+  margin-left: var(--sp-4);
+  margin-bottom: var(--sp-3);
+}
+
+/*------------------------------------*\
+  Forms
+\*------------------------------------*/
+form {
+  background: var(--color-white);
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: var(--sp-4) auto;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: var(--sp-2);
+  margin-bottom: var(--sp-2);
+  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  font-size: var(--fz-base);
+}
+form button {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--sp-2) var(--sp-4);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--fz-base);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+form button:hover {
+  background: var(--color-secondary);
+}
+
+/*------------------------------------*\
+  Footer
+\*------------------------------------*/
+.site-footer {
+  background: var(--color-accent);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--sp-4) 0;
+}
+.site-footer a {
+  color: var(--color-secondary);
+}
