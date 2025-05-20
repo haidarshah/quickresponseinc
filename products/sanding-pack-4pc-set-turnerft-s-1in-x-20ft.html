@@ -6,6 +6,11 @@
   <title>SANDING PACK 4PC SET TURNERS 1" X 20' — Quick Response Inc.</title>
   <link rel="stylesheet" href="../css/styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+  />
 </head>
 <body>
   <header class="site-header">
@@ -25,14 +30,27 @@
     </div>
   </header>
 
-  <section class="container section" id="product-detail">
-    <h2 class="section-title fade-in">SANDING PACK 4PC SET TURNERS 1" X 20'</h2>
-    <img class="fade-in" src="../images/products/sanding-pack-4pc-set-turnerft-s-1in-x-20ft.jpg" alt="SANDING PACK 4PC SET TURNERS 1" X 20'">
-    <p class="fade-in">The SANDING PACK 4PC SET TURNERS 1" X 20' is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
-    
-    <a class="btn fade-in" href="../contact.html?product=SANDING%20PACK%204PC%20SET%20TURNERS%201%22%20X%2020'">
-      Contact for Quote
-    </a>
+  <!-- Product Detail Section -->
+  <section class="container section product-detail">
+    <!-- Left: Lightbox Image -->
+    <div class="lightbox-container fade-in">
+      <a href="../images/products/sanding-pack-4pc-set-turnerft-s-1in-x-20ft.jpg"
+         data-lightbox="product"
+         data-title="SANDING PACK 4PC SET TURNERS 1" X 20'">
+        <img src="../images/products/sanding-pack-4pc-set-turnerft-s-1in-x-20ft.jpg" alt="SANDING PACK 4PC SET TURNERS 1" X 20'">
+      </a>
+    </div>
+
+    <!-- Right: Info & CTA -->
+    <div class="product-info fade-in">
+      <h2 class="section-title">SANDING PACK 4PC SET TURNERS 1" X 20'</h2>
+      <p>The SANDING PACK 4PC SET TURNERS 1" X 20' combines robust construction with intuitive controls—ideal for craftsmen and production shops alike. Engineered for precision, it delivers clean, consistent results on every job.</p>
+      
+      <a class="btn cta-btn"
+         href="../contact.html?product=SANDING%20PACK%204PC%20SET%20TURNERS%201%22%20X%2020'">
+        Request a Quote
+      </a>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -41,6 +59,8 @@
     </div>
   </footer>
 
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

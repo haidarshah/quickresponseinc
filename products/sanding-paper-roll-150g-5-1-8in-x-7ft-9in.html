@@ -6,6 +6,11 @@
   <title>SANDING PAPER ROLL 150G 5 1/8" X 7'9" — Quick Response Inc.</title>
   <link rel="stylesheet" href="../css/styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+  />
 </head>
 <body>
   <header class="site-header">
@@ -25,14 +30,27 @@
     </div>
   </header>
 
-  <section class="container section" id="product-detail">
-    <h2 class="section-title fade-in">SANDING PAPER ROLL 150G 5 1/8" X 7'9"</h2>
-    <img class="fade-in" src="../images/products/sanding-paper-roll-150g-5-1-8in-x-7ft-9in.jpg" alt="SANDING PAPER ROLL 150G 5 1/8" X 7'9"">
-    <p class="fade-in">The SANDING PAPER ROLL 150G 5 1/8" X 7'9" is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
-    
-    <a class="btn fade-in" href="../contact.html?product=SANDING%20PAPER%20ROLL%20150G%205%201%2F8%22%20X%207'9%22">
-      Contact for Quote
-    </a>
+  <!-- Product Detail Section -->
+  <section class="container section product-detail">
+    <!-- Left: Lightbox Image -->
+    <div class="lightbox-container fade-in">
+      <a href="../images/products/sanding-paper-roll-150g-5-1-8in-x-7ft-9in.jpg"
+         data-lightbox="product"
+         data-title="SANDING PAPER ROLL 150G 5 1/8" X 7'9"">
+        <img src="../images/products/sanding-paper-roll-150g-5-1-8in-x-7ft-9in.jpg" alt="SANDING PAPER ROLL 150G 5 1/8" X 7'9"">
+      </a>
+    </div>
+
+    <!-- Right: Info & CTA -->
+    <div class="product-info fade-in">
+      <h2 class="section-title">SANDING PAPER ROLL 150G 5 1/8" X 7'9"</h2>
+      <p>The SANDING PAPER ROLL 150G 5 1/8" X 7'9" combines robust construction with intuitive controls—ideal for craftsmen and production shops alike. Engineered for precision, it delivers clean, consistent results on every job.</p>
+      
+      <a class="btn cta-btn"
+         href="../contact.html?product=SANDING%20PAPER%20ROLL%20150G%205%201%2F8%22%20X%207'9%22">
+        Request a Quote
+      </a>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -41,6 +59,8 @@
     </div>
   </footer>
 
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

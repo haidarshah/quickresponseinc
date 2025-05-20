@@ -6,6 +6,11 @@
   <title>2" X 28" SANDING BELT 120 GRIT — Quick Response Inc.</title>
   <link rel="stylesheet" href="../css/styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+  />
 </head>
 <body>
   <header class="site-header">
@@ -25,14 +30,27 @@
     </div>
   </header>
 
-  <section class="container section" id="product-detail">
-    <h2 class="section-title fade-in">2" X 28" SANDING BELT 120 GRIT</h2>
-    <img class="fade-in" src="../images/products/belt-2-x-28-gr120.jpg" alt="2" X 28" SANDING BELT 120 GRIT">
-    <p class="fade-in">The 2" X 28" SANDING BELT 120 GRIT is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
-    
-    <a class="btn fade-in" href="../contact.html?product=2%22%20X%2028%22%20SANDING%20BELT%20120%20GRIT">
-      Contact for Quote
-    </a>
+  <!-- Product Detail Section -->
+  <section class="container section product-detail">
+    <!-- Left: Lightbox Image -->
+    <div class="lightbox-container fade-in">
+      <a href="../images/products/belt-2-x-28-gr120.jpg"
+         data-lightbox="product"
+         data-title="2" X 28" SANDING BELT 120 GRIT">
+        <img src="../images/products/belt-2-x-28-gr120.jpg" alt="2" X 28" SANDING BELT 120 GRIT">
+      </a>
+    </div>
+
+    <!-- Right: Info & CTA -->
+    <div class="product-info fade-in">
+      <h2 class="section-title">2" X 28" SANDING BELT 120 GRIT</h2>
+      <p>The 2" X 28" SANDING BELT 120 GRIT combines robust construction with intuitive controls—ideal for craftsmen and production shops alike. Engineered for precision, it delivers clean, consistent results on every job.</p>
+      
+      <a class="btn cta-btn"
+         href="../contact.html?product=2%22%20X%2028%22%20SANDING%20BELT%20120%20GRIT">
+        Request a Quote
+      </a>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -41,6 +59,8 @@
     </div>
   </footer>
 
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

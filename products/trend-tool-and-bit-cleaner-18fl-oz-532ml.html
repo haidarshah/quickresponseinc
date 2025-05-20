@@ -6,6 +6,11 @@
   <title>TREND TOOL AND BIT CLEANER 18FL OZ 532ML — Quick Response Inc.</title>
   <link rel="stylesheet" href="../css/styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+  />
 </head>
 <body>
   <header class="site-header">
@@ -25,14 +30,27 @@
     </div>
   </header>
 
-  <section class="container section" id="product-detail">
-    <h2 class="section-title fade-in">TREND TOOL AND BIT CLEANER 18FL OZ 532ML</h2>
-    <img class="fade-in" src="../images/products/trend-tool-and-bit-cleaner-18fl-oz-532ml.jpg" alt="TREND TOOL AND BIT CLEANER 18FL OZ 532ML">
-    <p class="fade-in">The TREND TOOL AND BIT CLEANER 18FL OZ 532ML is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
-    
-    <a class="btn fade-in" href="../contact.html?product=TREND%20TOOL%20AND%20BIT%20CLEANER%2018FL%20OZ%20532ML">
-      Contact for Quote
-    </a>
+  <!-- Product Detail Section -->
+  <section class="container section product-detail">
+    <!-- Left: Lightbox Image -->
+    <div class="lightbox-container fade-in">
+      <a href="../images/products/trend-tool-and-bit-cleaner-18fl-oz-532ml.jpg"
+         data-lightbox="product"
+         data-title="TREND TOOL AND BIT CLEANER 18FL OZ 532ML">
+        <img src="../images/products/trend-tool-and-bit-cleaner-18fl-oz-532ml.jpg" alt="TREND TOOL AND BIT CLEANER 18FL OZ 532ML">
+      </a>
+    </div>
+
+    <!-- Right: Info & CTA -->
+    <div class="product-info fade-in">
+      <h2 class="section-title">TREND TOOL AND BIT CLEANER 18FL OZ 532ML</h2>
+      <p>The TREND TOOL AND BIT CLEANER 18FL OZ 532ML combines robust construction with intuitive controls—ideal for craftsmen and production shops alike. Engineered for precision, it delivers clean, consistent results on every job.</p>
+      
+      <a class="btn cta-btn"
+         href="../contact.html?product=TREND%20TOOL%20AND%20BIT%20CLEANER%2018FL%20OZ%20532ML">
+        Request a Quote
+      </a>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -41,6 +59,8 @@
     </div>
   </footer>
 
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

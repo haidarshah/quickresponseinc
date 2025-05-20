@@ -6,6 +6,11 @@
   <title>STAND - TOOL 13" X 23" CAPACITY-700LB D2056 — Quick Response Inc.</title>
   <link rel="stylesheet" href="../css/styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+  />
 </head>
 <body>
   <header class="site-header">
@@ -25,14 +30,27 @@
     </div>
   </header>
 
-  <section class="container section" id="product-detail">
-    <h2 class="section-title fade-in">STAND - TOOL 13" X 23" CAPACITY-700LB D2056</h2>
-    <img class="fade-in" src="../images/products/stand-tool-13in-x-23in-capacity-700lb.jpg" alt="STAND - TOOL 13" X 23" CAPACITY-700LB D2056">
-    <p class="fade-in">The STAND - TOOL 13" X 23" CAPACITY-700LB D2056 is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
-    
-    <a class="btn fade-in" href="../contact.html?product=STAND%20-%20TOOL%2013%22%20X%2023%22%20CAPACITY-700LB%20D2056">
-      Contact for Quote
-    </a>
+  <!-- Product Detail Section -->
+  <section class="container section product-detail">
+    <!-- Left: Lightbox Image -->
+    <div class="lightbox-container fade-in">
+      <a href="../images/products/stand-tool-13in-x-23in-capacity-700lb.jpg"
+         data-lightbox="product"
+         data-title="STAND - TOOL 13" X 23" CAPACITY-700LB D2056">
+        <img src="../images/products/stand-tool-13in-x-23in-capacity-700lb.jpg" alt="STAND - TOOL 13" X 23" CAPACITY-700LB D2056">
+      </a>
+    </div>
+
+    <!-- Right: Info & CTA -->
+    <div class="product-info fade-in">
+      <h2 class="section-title">STAND - TOOL 13" X 23" CAPACITY-700LB D2056</h2>
+      <p>The STAND - TOOL 13" X 23" CAPACITY-700LB D2056 combines robust construction with intuitive controls—ideal for craftsmen and production shops alike. Engineered for precision, it delivers clean, consistent results on every job.</p>
+      
+      <a class="btn cta-btn"
+         href="../contact.html?product=STAND%20-%20TOOL%2013%22%20X%2023%22%20CAPACITY-700LB%20D2056">
+        Request a Quote
+      </a>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -41,6 +59,8 @@
     </div>
   </footer>
 
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

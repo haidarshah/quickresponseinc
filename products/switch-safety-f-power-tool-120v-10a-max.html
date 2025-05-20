@@ -6,6 +6,11 @@
   <title>SAFETY POWER TOOL SWITCH 120V 12 AMP — Quick Response Inc.</title>
   <link rel="stylesheet" href="../css/styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+  />
 </head>
 <body>
   <header class="site-header">
@@ -25,14 +30,27 @@
     </div>
   </header>
 
-  <section class="container section" id="product-detail">
-    <h2 class="section-title fade-in">SAFETY POWER TOOL SWITCH 120V 12 AMP</h2>
-    <img class="fade-in" src="../images/products/switch-safety-f-power-tool-120v-10a-max.jpg" alt="SAFETY POWER TOOL SWITCH 120V 12 AMP">
-    <p class="fade-in">The SAFETY POWER TOOL SWITCH 120V 12 AMP is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
-    
-    <a class="btn fade-in" href="../contact.html?product=SAFETY%20POWER%20TOOL%20SWITCH%20120V%2012%20AMP">
-      Contact for Quote
-    </a>
+  <!-- Product Detail Section -->
+  <section class="container section product-detail">
+    <!-- Left: Lightbox Image -->
+    <div class="lightbox-container fade-in">
+      <a href="../images/products/switch-safety-f-power-tool-120v-10a-max.jpg"
+         data-lightbox="product"
+         data-title="SAFETY POWER TOOL SWITCH 120V 12 AMP">
+        <img src="../images/products/switch-safety-f-power-tool-120v-10a-max.jpg" alt="SAFETY POWER TOOL SWITCH 120V 12 AMP">
+      </a>
+    </div>
+
+    <!-- Right: Info & CTA -->
+    <div class="product-info fade-in">
+      <h2 class="section-title">SAFETY POWER TOOL SWITCH 120V 12 AMP</h2>
+      <p>The SAFETY POWER TOOL SWITCH 120V 12 AMP combines robust construction with intuitive controls—ideal for craftsmen and production shops alike. Engineered for precision, it delivers clean, consistent results on every job.</p>
+      
+      <a class="btn cta-btn"
+         href="../contact.html?product=SAFETY%20POWER%20TOOL%20SWITCH%20120V%2012%20AMP">
+        Request a Quote
+      </a>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -41,6 +59,8 @@
     </div>
   </footer>
 
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>
