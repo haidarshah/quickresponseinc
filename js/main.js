@@ -8,14 +8,17 @@ if (document.getElementById('product-grid')) {
         const card = document.createElement('div');
         card.className = 'product-card';
 	card.innerHTML = `
-  		<img
-    			src="images/products/${p.id}.jpg"
-    			alt="${p.name}"
-    			onerror="this.parentElement.remove()"
-  	>
-  	<h4>${p.name}</h4>
-  	<a href="products/${p.id}.html">Details</a>
+  <div class="product-image">
+    <img
+      src="images/products/${p.id}.jpg"
+      alt="${p.name}"
+      onerror="this.parentElement.parentElement.remove()"
+    >
+  </div>
+  <h4>${p.name}</h4>
+  <a href="products/${p.id}.html">Details</a>
 `;
+
         grid.appendChild(card);
       });
     });

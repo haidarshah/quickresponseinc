@@ -1,3 +1,21 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;                /* take up all remaining space */
+}
+
+.site-footer {
+  margin-top: auto;       /* push the footer to the bottom */
+}
+
 /*------------------------------------*\
   Root Variables
 \*------------------------------------*/
@@ -311,10 +329,8 @@ a {
 /* Grid layout for detail */
 .product-detail {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr auto; /* 3 columns now: image | info | CTA */
   gap: var(--sp-5);
-  align-items: start;
-  margin-bottom: var(--sp-5);
 }
 
 /* Lightbox image styling */
@@ -350,6 +366,15 @@ a {
 .cta-btn:hover {
   background: var(--color-accent);
   transform: translateY(-2px);
+}
+
+.product-cta {
+  align-self: start;                 /* pin it to the top of its column */
+  margin-left: var(--sp-4);
+}
+
+.product-cta .cta-btn {
+  white-space: nowrap;
 }
 
 /*------------------------------------*\

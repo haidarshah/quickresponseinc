@@ -72,11 +72,18 @@ products.forEach(p => {
   ${header}
 
   <section class="container section product-detail">
+    <!-- 1) Left: Lightbox Image -->
     <div class="lightbox-container fade-in">
-      <a href="../images/products/${p.id}.jpg" data-lightbox="product" data-title="${p.name}">
+      <a
+        href="../images/products/${p.id}.jpg"
+        data-lightbox="product"
+        data-title="${p.name}"
+      >
         <img src="../images/products/${p.id}.jpg" alt="${p.name}">
       </a>
     </div>
+
+    <!-- 2) Middle: Product Info -->
     <div class="product-info fade-in">
       <h2 class="section-title">${p.name}</h2>
       <p>${desc}</p>
@@ -85,9 +92,19 @@ products.forEach(p => {
             ${specsList.map(s => `<li>${s}</li>`).join('\n            ')}
           </ul>`
         : ''}
-      <a class="btn cta-btn" href="../contact.html?product=${encodeURIComponent(p.name)}">Request a Quote</a>
+    </div>
+
+    <!-- 3) Right: CTA Button -->
+    <div class="product-cta fade-in">
+      <a
+        class="btn cta-btn"
+        href="../contact.html?product=${encodeURIComponent(p.name)}"
+      >
+        Request a Quote
+      </a>
     </div>
   </section>
+
 
   ${footer}
 
