@@ -150,7 +150,21 @@ a {
 .site-header nav a:hover {
   color: var(--color-primary);
 }
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right */
+}
 
+.site-nav {
+  margin-left: auto;              /* push nav to the right */
+  display: flex;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  gap: var(--sp-4);
+}
 
 /*------------------------------------*\
   Hero Section
@@ -366,3 +380,34 @@ form button:hover {
 .site-footer a:hover {
   color: var(--color-primary);
 }
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-2) 0;
+}
+
+.footer-nav ul {
+  display: flex;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav a,
+.footer-legal a {
+  color: var(--color-white);
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover,
+.footer-legal a:hover {
+  color: var(--color-primary);
+}
+
+.footer-legal span {
+  margin: 0 var(--sp-1);
+  color: var(--color-white);
+}
+
