@@ -7,11 +7,15 @@ if (document.getElementById('product-grid')) {
       products.forEach(p => {
         const card = document.createElement('div');
         card.className = 'product-card';
-        card.innerHTML = `
-          <img src="images/products/${p.id}.jpg" alt="${p.name}">
-          <h4>${p.name}</h4>
-          <a href="product.html?id=${p.id}">Details</a>
-        `;
+	card.innerHTML = `
+  		<img
+    			src="images/products/${p.id}.jpg"
+    			alt="${p.name}"
+    			onerror="this.parentElement.remove()"
+  	>
+  	<h4>${p.name}</h4>
+  	<a href="products/${p.id}.html">Details</a>
+`;
         grid.appendChild(card);
       });
     });
@@ -38,3 +42,19 @@ if (document.getElementById('product-detail')) {
       `;
     });
 }
+
+// Mobile nav toggle
+const navToggle = document.querySelector('.nav-toggle');
+const siteNav   = document.querySelector('.site-nav');
+
+if (navToggle && siteNav) {
+  navToggle.addEventListener('click', () => {
+    siteNav.classList.toggle('active');
+  });
+}
+
+// Close mobile nav on link click (optional)
+siteNav.querySelectorAll('a').forEach(link =>
+  link.addEventListener('click', () => siteNav.classList.remove('active'))
+);
+

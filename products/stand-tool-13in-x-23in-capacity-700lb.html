@@ -9,31 +9,38 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
+    <div class="container header-container">
       <h1 class="logo">Quick Response Inc.</h1>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About Us</a>
-        <a href="../products.html">Products</a>
-        <a href="../contact.html">Contact Us</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container" id="product-detail">
-    <h2>STAND - TOOL 13" X 23" CAPACITY-700LB D2056</h2>
-    <img src="../images/products/stand-tool-13in-x-23in-capacity-700lb.jpg" alt="STAND - TOOL 13" X 23" CAPACITY-700LB D2056">
-    <p></p>
+  <section class="container section" id="product-detail">
+    <h2 class="section-title fade-in">STAND - TOOL 13" X 23" CAPACITY-700LB D2056</h2>
+    <img class="fade-in" src="../images/products/stand-tool-13in-x-23in-capacity-700lb.jpg" alt="STAND - TOOL 13" X 23" CAPACITY-700LB D2056">
+    <p class="fade-in">The STAND - TOOL 13" X 23" CAPACITY-700LB D2056 is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
     
-    <a class="btn" href="../contact.html?product=STAND%20-%20TOOL%2013%22%20X%2023%22%20CAPACITY-700LB%20D2056">
+    <a class="btn fade-in" href="../contact.html?product=STAND%20-%20TOOL%2013%22%20X%2023%22%20CAPACITY-700LB%20D2056">
       Contact for Quote
     </a>
-  </main>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 Quick Response Inc.</p>
     </div>
   </footer>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

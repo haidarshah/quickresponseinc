@@ -9,31 +9,38 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
+    <div class="container header-container">
       <h1 class="logo">Quick Response Inc.</h1>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About Us</a>
-        <a href="../products.html">Products</a>
-        <a href="../contact.html">Contact Us</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container" id="product-detail">
-    <h2>TREND TOOL AND BIT CLEANER 18FL OZ 532ML</h2>
-    <img src="../images/products/trend-tool-and-bit-cleaner-18fl-oz-532ml.jpg" alt="TREND TOOL AND BIT CLEANER 18FL OZ 532ML">
-    <p></p>
+  <section class="container section" id="product-detail">
+    <h2 class="section-title fade-in">TREND TOOL AND BIT CLEANER 18FL OZ 532ML</h2>
+    <img class="fade-in" src="../images/products/trend-tool-and-bit-cleaner-18fl-oz-532ml.jpg" alt="TREND TOOL AND BIT CLEANER 18FL OZ 532ML">
+    <p class="fade-in">The TREND TOOL AND BIT CLEANER 18FL OZ 532ML is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
     
-    <a class="btn" href="../contact.html?product=TREND%20TOOL%20AND%20BIT%20CLEANER%2018FL%20OZ%20532ML">
+    <a class="btn fade-in" href="../contact.html?product=TREND%20TOOL%20AND%20BIT%20CLEANER%2018FL%20OZ%20532ML">
       Contact for Quote
     </a>
-  </main>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 Quick Response Inc.</p>
     </div>
   </footer>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

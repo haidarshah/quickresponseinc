@@ -9,31 +9,38 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
+    <div class="container header-container">
       <h1 class="logo">Quick Response Inc.</h1>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About Us</a>
-        <a href="../products.html">Products</a>
-        <a href="../contact.html">Contact Us</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container" id="product-detail">
-    <h2>SANDING DISC 5" PEEL & STICK CLOTH 120G</h2>
-    <img src="../images/products/sanding-disc-5in-peel-and-stick-cloth-120g.jpg" alt="SANDING DISC 5" PEEL & STICK CLOTH 120G">
-    <p></p>
+  <section class="container section" id="product-detail">
+    <h2 class="section-title fade-in">SANDING DISC 5" PEEL & STICK CLOTH 120G</h2>
+    <img class="fade-in" src="../images/products/sanding-disc-5in-peel-and-stick-cloth-120g.jpg" alt="SANDING DISC 5" PEEL & STICK CLOTH 120G">
+    <p class="fade-in">The SANDING DISC 5" PEEL & STICK CLOTH 120G is engineered for reliability and precision—perfect for professional woodworking and custom projects.</p>
     
-    <a class="btn" href="../contact.html?product=SANDING%20DISC%205%22%20PEEL%20%26%20STICK%20CLOTH%20120G">
+    <a class="btn fade-in" href="../contact.html?product=SANDING%20DISC%205%22%20PEEL%20%26%20STICK%20CLOTH%20120G">
       Contact for Quote
     </a>
-  </main>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 Quick Response Inc.</p>
     </div>
   </footer>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

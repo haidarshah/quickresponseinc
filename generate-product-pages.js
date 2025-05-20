@@ -1,8 +1,8 @@
 // generate-product-pages.js
-const fs = require('fs');
+const fs   = require('fs');
 const path = require('path');
 
-// load products.json
+// Load your products.json
 const productsPath = path.join(__dirname, 'data', 'products.json');
 if (!fs.existsSync(productsPath)) {
   console.error('❌ data/products.json not found');
@@ -10,14 +10,20 @@ if (!fs.existsSync(productsPath)) {
 }
 const products = JSON.parse(fs.readFileSync(productsPath, 'utf8'));
 
-// ensure output folder exists
+// Prepare output folder
 const outDir = path.join(__dirname, 'products');
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
 
 products.forEach(p => {
-  // fallback to empty array if specs missing or not an array
+  // Safely pull specs (even if missing)
   const specsList = Array.isArray(p.specs) ? p.specs : [];
 
+  // Use existing description or generate a placeholder
+  const desc = p.description && p.description.trim()
+    ? p.description
+    : `The ${p.name} is engineered for reliability and precision—perfect for professional woodworking and custom projects.`;
+
+  // Build HTML
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,41 +35,50 @@ products.forEach(p => {
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
+    <div class="container header-container">
       <h1 class="logo">Quick Response Inc.</h1>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About Us</a>
-        <a href="../products.html">Products</a>
-        <a href="../contact.html">Contact Us</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container" id="product-detail">
-    <h2>${p.name}</h2>
-    <img src="../images/products/${p.id}.jpg" alt="${p.name}">
-    <p>${p.description || ''}</p>
+  <section class="container section" id="product-detail">
+    <h2 class="section-title fade-in">${p.name}</h2>
+    <img class="fade-in" src="../images/products/${p.id}.jpg" alt="${p.name}">
+    <p class="fade-in">${desc}</p>
     ${specsList.length
-      ? `<ul>
-        ${specsList.map(s => `<li>${s}</li>`).join('\n        ')}
-      </ul>`
+      ? `<ul class="fade-in">
+          ${specsList.map(s => `<li>${s}</li>`).join('\n          ')}
+        </ul>`
       : ''}
-    <a class="btn" href="../contact.html?product=${encodeURIComponent(p.name)}">
+    <a class="btn fade-in" href="../contact.html?product=${encodeURIComponent(p.name)}">
       Contact for Quote
     </a>
-  </main>
+  </section>
 
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025 Quick Response Inc.</p>
     </div>
   </footer>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>`;
 
-  fs.writeFileSync(path.join(outDir, `${p.id}.html`), html, 'utf8');
-  console.log(`✔️  Generated products/${p.id}.html`);
+  // Write out the file
+  const filename = path.join(outDir, `${p.id}.html`);
+  fs.writeFileSync(filename, html, 'utf8');
+  console.log(`✔️  Generated ${filename}`);
 });
 
-console.log(`✅ Generated ${products.length} product pages.`);
+console.log(`✅ All ${products.length} product pages generated.`);
