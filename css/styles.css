@@ -135,36 +135,21 @@ a {
 /*------------------------------------*\
   Header & Navigation
 \*------------------------------------*/
+/* Header on black background */
 .site-header {
-  background: var(--color-white);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background: var(--color-bg);            /* was white, now black */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);   /* slightly darker shadow */
 }
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.site-header .logo {
+  color: var(--color-white);              /* logo in white */
 }
-.logo {
-  font-family: var(--font-serif);
-  font-size: var(--fz-xxl);
-  color: var(--color-primary);
+.site-header nav a {
+  color: var(--color-white);              /* nav links in white */
 }
-nav {
-  display: flex;
-  align-items: center;
+.site-header nav a:hover {
+  color: var(--color-primary);            /* orange on hover */
 }
-nav a {
-  margin-left: var(--sp-3);
-  font-weight: 500;
-  color: var(--color-accent);
-  transition: color 0.2s;
-}
-nav a:hover {
-  color: var(--color-primary);
-}
+
 
 /*------------------------------------*\
   Hero Section
@@ -340,11 +325,14 @@ form button:hover {
   Footer
 \*------------------------------------*/
 .site-footer {
-  background: var(--color-accent);
-  color: var(--color-white);
-  text-align: center;
-  padding: var(--sp-4) 0;
+  background: var(--color-bg);            /* was accent/off-white, now black */
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.5);
 }
+.site-footer,
+.site-footer p,
 .site-footer a {
-  color: var(--color-secondary);
+  color: var(--color-white);              /* footer text/links in white */
+}
+.site-footer a:hover {
+  color: var(--color-primary);            /* orange on hover */
 }
