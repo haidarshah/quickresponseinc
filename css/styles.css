@@ -2,15 +2,17 @@
   Root Variables
 \*------------------------------------*/
 :root {
-  /* Black & Accent Palette */
-  --color-bg: #000000;       /* jet-black site background */
-  --color-white: #ffffff;    /* cards, headers, footers */
-  --color-accent: #ecf0f1;   /* off-white text on black */
-  --color-primary: #e67e22;  /* bright orange accents */
-  --color-secondary: #95a5a6;/* light grey accents */
-  --color-muted: #7f8c8d;    /* medium grey for subtext */
+  /* New Palette: Light canvas + charcoal header/footer */
+  --color-bg: #f4f4f4;         /* off-white page background */
+  --color-header: #2c3e50;     /* dark charcoal/nav */
+  --color-footer: #2c3e50;     /* same as header */
+  --color-white: #ffffff;      /* card & section bg */
+  --color-text: #333333;       /* dark text on light bg */
+  --color-muted: #7f8c8d;      /* for secondary text */
+  --color-primary: #e67e22;    /* bright orange accents */
+  --color-secondary: #95a5a6;  /* light grey accents */
 
-  /* Typography & spacing – unchanged */
+  /* Typography & spacing (unchanged) */
   --font-sans: 'Montserrat', sans-serif;
   --font-serif: 'Merriweather', serif;
   --fz-base: 1rem;
@@ -110,7 +112,7 @@ body {
 }
 body {
   background-color: var(--color-bg);
-  color: var(--color-accent); /* off-white text against black */
+  color: var(--color-text); /* off-white text against black */
 }
 img {
   display: block;
@@ -137,17 +139,16 @@ a {
 \*------------------------------------*/
 /* Header on black background */
 .site-header {
-  background: var(--color-bg);            /* was white, now black */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);   /* slightly darker shadow */
+  background: var(--color-header);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.site-header .logo {
-  color: var(--color-white);              /* logo in white */
-}
-.site-header nav a {
-  color: var(--color-white);              /* nav links in white */
+.site-header .logo,
+.site-header nav a,
+.nav-toggle span {
+  color: var(--color-white);
 }
 .site-header nav a:hover {
-  color: var(--color-primary);            /* orange on hover */
+  color: var(--color-primary);
 }
 
 
@@ -355,14 +356,13 @@ form button:hover {
   Footer
 \*------------------------------------*/
 .site-footer {
-  background: var(--color-bg);            /* was accent/off-white, now black */
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.5);
+  background: var(--color-footer);
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
 }
 .site-footer,
-.site-footer p,
 .site-footer a {
-  color: var(--color-white);              /* footer text/links in white */
+  color: var(--color-white);
 }
 .site-footer a:hover {
-  color: var(--color-primary);            /* orange on hover */
+  color: var(--color-primary);
 }

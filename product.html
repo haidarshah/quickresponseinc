@@ -9,22 +9,30 @@
   <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
- <header class="site-header">
-  <div class="container header-container">
-    <h1 class="logo">Quick Response Inc.</h1>
-    <button class="nav-toggle" aria-label="Toggle navigation">
+<header class="site-header">
+  <div class="container header-flex">
+    <!-- Logo (links to home) -->
+    <a href="index.html" class="logo" aria-label="Quick Response Inc. Home">
+      Quick Response Inc.
+    </a>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
+
+    <!-- Navigation + CTA -->
     <nav class="site-nav">
-      <ul>
+      <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
       </ul>
+      <a href="contact.html" class="btn nav-cta">Contact Us</a>
     </nav>
   </div>
 </header>
+
 <body>
   <header class="site-header">…</header>
   <main class="container" id="product-detail">
