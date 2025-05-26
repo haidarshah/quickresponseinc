@@ -456,3 +456,42 @@ form button:hover {
   color: var(--color-white);
 }
 
+/* Contact Info Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+
+/* Map container styling */
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border-radius: var(--radius-md);
+}
+
+/* Details styling */
+.details p {
+  margin-bottom: var(--sp-3);
+  line-height: 1.5;
+}
+.details a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.details a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .map-container,
+  .details {
+    width: 100%;
+  }
+}
