@@ -61,3 +61,44 @@ siteNav.querySelectorAll('a').forEach(link =>
   link.addEventListener('click', () => siteNav.classList.remove('active'))
 );
 
+document.addEventListener('DOMContentLoaded', () => {
+  const forms = document.querySelectorAll('form.netlify-form');
+  const modal = document.getElementById('thankYouModal');
+  const close = modal.querySelector('.modal-close');
+
+  forms.forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      // honeypot check
+      if (form.querySelector('[name="bot-field"]').value) return;
+
+      const data = new FormData(form);
+      fetch(window.location.pathname, {
+        method: 'POST',
+        headers: { 'Accept': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(res => {
+        if (res.ok) {
+          // show the modal
+          modal.style.display = 'flex';
+          form.reset();
+        } else {
+          return res.text().then(text => { throw new Error(text) });
+        }
+      })
+      .catch(err => {
+        alert('Oops! There was a problem submitting your form');
+        console.error(err);
+      });
+    });
+  });
+
+  // close modal on “×” or backdrop click
+  close.addEventListener('click', () => modal.style.display = 'none');
+  modal.addEventListener('click', e => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+});
+
