@@ -64,33 +64,51 @@
 </section>
   </main>
 
+<!-- Contact Form Section at Bottom -->
+<section class="mt-20 bg-gray-100 py-12">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+    <p class="text-lg mb-8">Get in Touch or Request a Quote.</p>
+    
+    <form
+      name="contact-bottom"
+      method="POST"
+      data-netlify="true"
+      class="space-y-6 max-w-lg mx-auto"
+    >
+      <!-- Hidden input to specify the form name -->
+      <input type="hidden" name="form-name" value="contact-bottom" />
 
-    <div class="container">
-      <h2>Request a Quote</h2>
-<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="netlify-form">
-  <input type="hidden" name="form-name" value="contact">
-  <p class="hidden">
-    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
-  </p>
-  <p>
-    <label>Name:<br>
-      <input type="text" name="name" required>
-    </label>
-  </p>
-  <p>
-    <label>Email:<br>
-      <input type="email" name="email" required>
-    </label>
-  </p>
-  <p>
-    <label>Message:<br>
-      <textarea name="message" rows="4"></textarea>
-    </label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+      <input
+        type="text"
+        name="full-name"
+        placeholder="Full Name"
+        class="w-full p-3 border rounded-lg"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        class="w-full p-3 border rounded-lg"
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="Message"
+        rows="4"
+        class="w-full p-3 border rounded-lg"
+        required
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-orange-600 text-white py-3 px-6 rounded-lg hover:bg-orange-700 transition"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
 
    
     </div>
